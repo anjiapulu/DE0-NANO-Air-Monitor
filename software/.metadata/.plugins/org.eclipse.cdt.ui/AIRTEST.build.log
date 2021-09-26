@@ -1,0 +1,10 @@
+
+**** Build of configuration Nios II for project AIRTEST ****
+
+make all 
+Info: Building ../AIRTEST_bsp/
+make --no-print-directory -C ../AIRTEST_bsp/
+[BSP build complete]
+[AIRTEST build complete]
+
+**** Build Finished ****

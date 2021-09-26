@@ -1,0 +1,200 @@
+#============================================================
+# Build by Terasic System Builder
+#============================================================
+
+set_global_assignment -name FAMILY "Cyclone IV E"
+set_global_assignment -name DEVICE EP4CE22F17C6
+set_global_assignment -name TOP_LEVEL_ENTITY test1
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 9.1
+set_global_assignment -name LAST_QUARTUS_VERSION 13.1
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "16:17:44 DECEMBER 21,2010"
+set_global_assignment -name DEVICE_FILTER_PACKAGE FPGA
+set_global_assignment -name DEVICE_FILTER_PIN_COUNT 256
+set_global_assignment -name DEVICE_FILTER_SPEED_GRADE 6
+set_global_assignment -name CYCLONEII_RESERVE_NCEO_AFTER_CONFIGURATION "USE AS REGULAR IO"
+set_global_assignment -name RESERVE_FLASH_NCE_AFTER_CONFIGURATION "USE AS REGULAR IO"
+set_global_assignment -name RESERVE_DATA0_AFTER_CONFIGURATION "USE AS REGULAR IO"
+set_global_assignment -name RESERVE_DATA1_AFTER_CONFIGURATION "USE AS REGULAR IO"
+set_global_assignment -name RESERVE_DCLK_AFTER_CONFIGURATION "USE AS REGULAR IO"
+#============================================================
+# CLOCK
+#============================================================
+
+#============================================================
+# LED
+#============================================================
+
+#============================================================
+# KEY
+#============================================================
+
+#============================================================
+# SW
+#============================================================
+
+#============================================================
+# SDRAM
+#============================================================
+
+#============================================================
+# EPCS
+#============================================================
+
+#============================================================
+# Accelerometer and EEPROM
+#============================================================
+
+#============================================================
+# ADC
+#============================================================
+
+#============================================================
+# 2x13 GPIO Header
+#============================================================
+
+#============================================================
+# GPIO_0, GPIO_0 connect to GPIO Default
+#============================================================
+
+#============================================================
+# GPIO_0, GPIO_1 connect to GPIO Default
+#============================================================
+
+
+
+
+
+#============================================================
+# End of pin assignments by Terasic System Builder
+#============================================================
+
+
+set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "3.3-V LVTTL"
+
+set_global_assignment -name OPTIMIZE_HOLD_TIMING "ALL PATHS"
+set_global_assignment -name OPTIMIZE_MULTI_CORNER_TIMING ON
+set_global_assignment -name FITTER_EFFORT "STANDARD FIT"
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_location_assignment PIN_R8 -to clk
+set_global_assignment -name ENABLE_CONFIGURATION_PINS OFF
+set_global_assignment -name ENABLE_NCE_PIN OFF
+set_global_assignment -name ENABLE_BOOT_SEL_PIN OFF
+set_global_assignment -name USE_CONFIGURATION_DEVICE OFF
+set_global_assignment -name CRC_ERROR_OPEN_DRAIN OFF
+set_global_assignment -name OUTPUT_IO_TIMING_NEAR_END_VMEAS "HALF VCCIO" -rise
+set_global_assignment -name OUTPUT_IO_TIMING_NEAR_END_VMEAS "HALF VCCIO" -fall
+set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -rise
+set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -fall
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to dram_dq[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to dram_dq[14]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to dram_addr[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to dram_addr[9]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to altera_reserved_tck
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to clk
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to dram_addr[12]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to dram_addr[11]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to dram_addr[10]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to dram_addr[8]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to dram_addr[7]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to dram_addr[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to dram_addr[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to dram_addr[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to altera_reserved_tdi
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to altera_reserved_tdo
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to altera_reserved_tms
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to altpll_locked_conduit_export
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to altpll_phasedone_conduit_export
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to dram_addr[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to dram_addr[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to dram_addr[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to dram_ba[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to dram_ba[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to dram_cas_n
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to dram_cke
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to dram_clk
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to dram_cs_n
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to dram_dq[15]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to dram_dq[13]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to dram_dq[12]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to dram_dq[11]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to dram_dq[10]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to dram_dq[9]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to dram_dq[8]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to dram_dq[7]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to dram_dq[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to dram_dq[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to dram_dq[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to dram_dq[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to dram_dq[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to dram_dq[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to dram_dqm[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to dram_dqm[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to dram_ras_n
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to dram_we_n
+set_location_assignment PIN_P2 -to dram_addr[0]
+set_location_assignment PIN_N5 -to dram_addr[1]
+set_location_assignment PIN_N6 -to dram_addr[2]
+set_location_assignment PIN_M8 -to dram_addr[3]
+set_location_assignment PIN_P8 -to dram_addr[4]
+set_location_assignment PIN_T7 -to dram_addr[5]
+set_location_assignment PIN_N8 -to dram_addr[6]
+set_location_assignment PIN_T6 -to dram_addr[7]
+set_location_assignment PIN_R1 -to dram_addr[8]
+set_location_assignment PIN_P1 -to dram_addr[9]
+set_location_assignment PIN_N2 -to dram_addr[10]
+set_location_assignment PIN_N1 -to dram_addr[11]
+set_location_assignment PIN_L4 -to dram_addr[12]
+set_location_assignment PIN_M7 -to dram_ba[0]
+set_location_assignment PIN_M6 -to dram_ba[1]
+set_location_assignment PIN_L1 -to dram_cas_n
+set_location_assignment PIN_L7 -to dram_cke
+set_location_assignment PIN_R4 -to dram_clk
+set_location_assignment PIN_P6 -to dram_cs_n
+set_location_assignment PIN_G2 -to dram_dq[0]
+set_location_assignment PIN_G1 -to dram_dq[1]
+set_location_assignment PIN_L8 -to dram_dq[2]
+set_location_assignment PIN_K5 -to dram_dq[3]
+set_location_assignment PIN_K2 -to dram_dq[4]
+set_location_assignment PIN_J2 -to dram_dq[5]
+set_location_assignment PIN_J1 -to dram_dq[6]
+set_location_assignment PIN_R7 -to dram_dq[7]
+set_location_assignment PIN_T4 -to dram_dq[8]
+set_location_assignment PIN_T2 -to dram_dq[9]
+set_location_assignment PIN_T3 -to dram_dq[10]
+set_location_assignment PIN_R3 -to dram_dq[11]
+set_location_assignment PIN_R5 -to dram_dq[12]
+set_location_assignment PIN_P3 -to dram_dq[13]
+set_location_assignment PIN_N3 -to dram_dq[14]
+set_location_assignment PIN_K1 -to dram_dq[15]
+set_location_assignment PIN_R6 -to dram_dqm[0]
+set_location_assignment PIN_T5 -to dram_dqm[1]
+set_location_assignment PIN_L2 -to dram_ras_n
+set_location_assignment PIN_C2 -to dram_we_n
+set_location_assignment PIN_A2 -to scl_export
+set_location_assignment PIN_B3 -to sda_export
+set_location_assignment PIN_A5 -to uart_test_external_connection_rxd
+set_location_assignment PIN_B6 -to uart_test_external_connection_txd
+set_location_assignment PIN_E1 -to key_external_connection_export
+set_location_assignment PIN_B7 -to uart_co_external_connection_rxd
+set_location_assignment PIN_A7 -to uart_co_external_connection_txd
+set_location_assignment PIN_R13 -to uart_sds011_external_connection_rxd
+set_location_assignment PIN_R12 -to uart_sds011_external_connection_txd
+set_location_assignment PIN_C8 -to uart_o3_external_connection_rxd
+set_location_assignment PIN_E7 -to uart_o3_external_connection_txd
+set_location_assignment PIN_E8 -to uart_so2_external_connection_rxd
+set_location_assignment PIN_F9 -to uart_so2_external_connection_txd
+set_location_assignment PIN_T10 -to uart_hmi_external_connection_rxd
+set_location_assignment PIN_P11 -to uart_hmi_external_connection_txd
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name QSYS_FILE DE0_NANO_QSYS.qsys
+set_global_assignment -name BDF_FILE test1.bdf
+set_location_assignment PIN_H2 -to epcs_flash_external_data0
+set_location_assignment PIN_H1 -to epcs_flash_external_dclk
+set_location_assignment PIN_C1 -to epcs_flash_external_sdo
+set_location_assignment PIN_D2 -to epcs_flash_external_sce
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

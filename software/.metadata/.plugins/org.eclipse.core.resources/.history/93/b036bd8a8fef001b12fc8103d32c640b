@@ -1,0 +1,109 @@
+/*
+ * sopc.h
+ *
+ *  Created on: 2021-4-22
+ *      Author: Administrator
+ */
+
+#ifndef SOPC_H_
+#define SOPC_H_
+
+/*-------------------------------------------------------------------------
+ *  Include
+ *------------------------------------------------------------------------*/
+#include "system.h"
+
+/*-------------------------------------------------------------------------
+ *  Define
+ *------------------------------------------------------------------------*/
+#define _UART
+
+/*-------------------------------------------------------------------------
+ *  Peripheral registers structures
+ *------------------------------------------------------------------------*/
+
+/*--------------------------UART------------------------------------------*/
+typedef struct
+{
+	union{
+		struct{
+			volatile unsigned long int RECEIVE_DATA			:8;
+			volatile unsigned long int NC			        :24;
+		}BITS;
+		volatile unsigned long int WORD;
+	}RXDATA;
+
+	union{
+		struct{
+			volatile unsigned long int TRANSMIT_DATA	    :8;
+			volatile unsigned long int NC			        :24;
+		}BITS;
+		volatile unsigned long int WORD;
+	}TXDATA;
+
+	union{
+		struct{
+			volatile unsigned long int PE		    :1;
+			volatile unsigned long int FE		    :1;
+			volatile unsigned long int BRK			:1;
+			volatile unsigned long int ROE			:1;
+			volatile unsigned long int TOE			:1;
+			volatile unsigned long int TMT			:1;
+			volatile unsigned long int TRDY			:1;	//当发送数据txdata寄存器为空，它可以准备接收新字符，此时TRDY为1；此时发送准备好了
+			volatile unsigned long int RRDY			:1;	//接收是否准备好
+			volatile unsigned long int E		    :1;
+			volatile unsigned long int NC		    :1;
+			volatile unsigned long int DCTS			:1;
+			volatile unsigned long int CTS			:1;
+			volatile unsigned long int EOP			:1;
+			volatile unsigned long int NC1			:19;
+		} BITS;
+		volatile unsigned long int WORD;
+	}STATUS;
+
+	union{
+		struct{
+			volatile unsigned long int IPE			:1;
+			volatile unsigned long int IFE			:1;
+			volatile unsigned long int IBRK			:1;
+			volatile unsigned long int IROE			:1;
+			volatile unsigned long int ITOE			:1;
+			volatile unsigned long int ITMT			:1;
+			volatile unsigned long int ITRDY	    :1;
+			volatile unsigned long int IRRDY	    :1;
+			volatile unsigned long int IE		    :1;
+			volatile unsigned long int TRBK			:1;
+			volatile unsigned long int IDCTS	    :1;
+			volatile unsigned long int RTS			:1;
+			volatile unsigned long int IEOP			:1;
+			volatile unsigned long int NC		    :19;
+		}BITS;
+		volatile unsigned long int WORD;
+	}CONTROL;
+
+	union{
+		struct{
+			volatile unsigned long int BAUD_RATE_DIVISOR	:16;
+			volatile unsigned long int NC                   :16;
+		}BITS;
+		volatile unsigned  int WORD;
+	}DIVISOR;
+
+}UART_ST;
+
+/*-------------------------------------------------------------------
+ *  Peripheral declaration
+ *------------------------------------------------------------------*/
+#ifdef _UART
+
+//这个地方要注意了，多了（1<<31）,这就是bypass Cache
+//#define UART			 ((UART_ST *) (UART_BASE | (1<<31)))
+#define UART_SO2		 ((UART_ST *) (UART_SO2_BASE | (1<<31)))
+#define UART_CO		     ((UART_ST *) (UART_CO_BASE | (1<<31)))
+#define UART_NO2		     ((UART_ST *) (UART_NO2_BASE | (1<<31)))
+#define UART_O3		     ((UART_ST *) (UART_O3_BASE | (1<<31)))
+#define UART_SDS011		     ((UART_ST *) (UART_SDS011_BASE | (1<<31)))
+
+
+#endif /*_UART */
+#endif /* SOPC_H_ */

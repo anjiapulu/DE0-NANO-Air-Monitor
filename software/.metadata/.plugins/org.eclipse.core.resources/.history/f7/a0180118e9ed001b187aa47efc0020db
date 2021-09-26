@@ -1,0 +1,56 @@
+#include "system.h"
+#include "sys/alt_irq.h"
+#include <unistd.h>
+#include <stdio.h>
+#include <string.h>
+#include "../driver/LQ12864.h"
+#include "../driver/code.h"
+#include "../inc/sopc.h"
+#include "../inc/uart_co.h"
+#include "../inc/uart_no2.h"
+#include "../inc/uart_o3.h"
+#include "../inc/uart_so2.h"
+#include "../inc/uart_sds011.h"
+
+
+
+/*
+ * ===  FUNCTION  ======================================================================
+ *         Name:  main
+ *  Description:
+ * =====================================================================================
+ */
+
+int main(void)
+{
+    char temp[32];
+	OLED_Init();
+	while(1)
+	{
+
+			uart_so2.init();
+			uart_co.init2();
+			uart_no2.init3();
+			uart_o3.init4();
+			uart_sds011.init5();
+			sprintf(temp,"SO2:%.5f mg/m3\n", uart_so2.SO2_DATA);
+			OLED_P8x16Str(0,0,temp);
+			sprintf(temp,"CO:%.3f mg/m3\n", uart_co.CO_DATA);
+			OLED_P8x16Str(0,2,temp);
+			sprintf(temp,"NO2:%.3f mg/m3\n", uart_no2.NO2_DATA);
+			OLED_P8x16Str(0,4,temp);
+			sprintf(temp,"O3:%.3f mg/m3\n", uart_o3.O3_DATA);
+			OLED_P8x16Str(0,6,temp);
+			usleep(2000000);
+			OLED_CLS();//«Â∆¡
+			sprintf(temp,"PM2.5:%.2f ug/m3\n", uart_sds011.pm25_DATA);
+			OLED_P8x16Str(0,0,temp);
+			sprintf(temp,"PM10:%.2f ug/m3\n", uart_sds011.pm10_DATA);
+			OLED_P8x16Str(0,4,temp);
+			usleep(2000000);
+
+
+	}
+	return 0;
+}
+

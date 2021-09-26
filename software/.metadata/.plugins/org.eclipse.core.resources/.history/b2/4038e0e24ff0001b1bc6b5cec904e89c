@@ -1,0 +1,40 @@
+/*
+ * uart.h
+ *
+ *  Created on: 2021-4-22
+ *      Author: Administrator
+ */
+
+#ifndef UART_HMI_H_
+#define UART_HMI_H_
+
+/*-----------------------------------------------------------------------------
+ *  Include
+ *-----------------------------------------------------------------------------*/
+#include "../inc/sopc.h"
+
+void display_hmi(unsigned char change);
+/*-----------------------------------------------------------------------------
+ *  Define
+ *-----------------------------------------------------------------------------*/
+#define BUFFER_SIZE 200
+
+/*------------------------------------------------------------------------------
+ *  Struct
+ *-----------------------------------------------------------------------------*/
+typedef struct
+{
+	int (* send_byte)(unsigned char data);
+	void (* send_string)(unsigned int len, unsigned char *str);
+	int (* init6)(void);
+	unsigned int (*baudrate)(unsigned int baudrate);
+	void (*datachange)(unsigned char change);
+	void (*end)(void);
+}UART_HMI_T;
+
+extern UART_HMI_T uart_hmi;	//声明为外部变量，可全局使用
+
+
+
+
+#endif /* UART_H_ */
